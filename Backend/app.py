@@ -28,6 +28,9 @@ llm = GoogleGenerativeAI(
 
 app = Flask(__name__)
 flask_cors.CORS(app)
+# allow all the orgigin
+app.config['CORS_HEADERS'] = 'Content-Type'
+app.config['CORS_RESOURCES'] = {{"origins": "*"}}
 
 def load_data():
     data = []
