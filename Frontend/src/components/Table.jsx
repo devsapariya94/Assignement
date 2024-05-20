@@ -19,7 +19,7 @@ export default function DataTable() {
   const [maxAvg_salary, setMaxAvg_salary] = useState(0);
 
   useEffect(() => {
-    fetch("/get_aggregated_data")
+    fetch("https://backend.assignment.devsdemo.co/get_aggregated_data")
       .then((res) => res.json())
       .then(
         (result) => {
@@ -41,7 +41,7 @@ export default function DataTable() {
   const handleRowClick = (params) => {
     const year = params.row.year;
     setSelectedYear(year);
-    fetch(`/get_jobs_by_year/${year}`)
+    fetch(`https://backend.assignment.devsdemo.co/get_jobs_by_year/${year}`)
       .then((res) => res.json())
       .then(
         (result) => {

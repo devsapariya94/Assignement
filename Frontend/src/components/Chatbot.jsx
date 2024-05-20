@@ -22,7 +22,7 @@ const MyChatBot = () => {
         message: async (params) => {
           const history = localStorage.getItem("playground");
           const sortHitsory = (JSON.parse(history).slice(-5, -1));
-          const response = await fetch("/ai", {
+          const response = await fetch("https://backend.assignment.devsdemo.co/ai", {
             method: "POST",
             body: JSON.stringify({
               message: params.userInput,
